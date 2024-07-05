@@ -1,8 +1,8 @@
 import {  Router } from 'express'
 import multer from 'multer'
 
-import authMiddleware from './middlewares/auth'
-import multerConfig from './app/config/multer'
+import authMiddleware from './app/middlewares/auth'
+import multerConfig from './config/multer'
 
 import ProductController from './app/controllers/ProductController'
 import SessionController from './app/controllers/SessionController'
