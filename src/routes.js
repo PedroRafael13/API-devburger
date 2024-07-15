@@ -24,5 +24,7 @@ routes.post('/categories',CategoryController.store)
 routes.get('/categories', CategoryController.index)
 
 routes.post('/order',OrderController.store)
+routes.get('/order',OrderController.store)
+routes.put('/order/:id',OrderController.updade)
 
 export default routes
