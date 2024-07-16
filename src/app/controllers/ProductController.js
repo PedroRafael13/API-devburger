@@ -39,9 +39,9 @@ class ProductController {
 
   async update(request, response ){
     const schema = Yup.object({
-      name : Yup.string().required(),
-      price : Yup.number().required(),
-      category_id: Yup.number().required(),
+      name : Yup.string(),
+      price : Yup.number(),
+      category_id: Yup.number(),
       offer : Yup.boolean(),
     })
 
