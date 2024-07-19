@@ -1,14 +1,14 @@
-import Sequelize ,{ Model } from "sequelize"
+import Sequelize, { Model } from "sequelize"
 
 class Product extends Model {
-  static init(sequelize){
+  static init(sequelize) {
     super.init({
-      name : Sequelize.STRING,
-      price : Sequelize.INTEGER,
-      path : Sequelize.STRING, 
-      offer: Sequelize.Boolean,
-      url : {
-        type : Sequelize.VIRTUAL,
+      name: Sequelize.STRING,
+      price: Sequelize.INTEGER,
+      path: Sequelize.STRING,
+      offer: Sequelize.BOOLEAN,
+      url: {
+        type: Sequelize.VIRTUAL,
         get() {
           return `http://localhost:3001/product-file/${this.path}`
         }
@@ -22,8 +22,8 @@ class Product extends Model {
 
   static associate(models) {
     this.belongsTo(models.Category, {
-      foreignKey : 'category_id',
-      as : 'category',
+      foreignKey: 'category_id',
+      as: 'category',
     })
   }
 }
