@@ -27,6 +27,10 @@ class CreatePaymentIntentController {
         ),
     });
 
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error("A chave secreta do Stripe não esta definida")
+    }
+
     try {
       schema.validateSync(request.body, { abortEarly: false });
     } catch (err) {
