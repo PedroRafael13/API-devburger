@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 import * as Yup from "yup";
- 
+
 import 'dotenv/config.js'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -44,12 +44,10 @@ class CreatePaymentIntentController {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency: "brl",
-
       automatic_payment_methods: {
         enabled: true,
       },
     });
-
 
     response.send({
       clientSecret: paymentIntent.client_secret,
