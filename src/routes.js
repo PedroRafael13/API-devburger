@@ -27,7 +27,7 @@ routes.get('/categories', CategoryController.index)
 routes.put('/categories/:id', upload.single('file'), ProductController.update)
 
 routes.post('/order', OrderController.store)
-routes.get('/order', OrderController.store)
+routes.get('/order', OrderController.index)
 routes.put('/order/:id', OrderController.updade)
 routes.post('/create-payment-intent', CreatePaymentIntentControllerroller.store)
 
