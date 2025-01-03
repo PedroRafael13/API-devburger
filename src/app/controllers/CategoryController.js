@@ -1,6 +1,7 @@
 import * as Yup from "Yup"
 import Category from "../models/Category"
 import User from "../models/User"
+
 class CategoryController {
   async store(request, response) {
     const schema = Yup.object({
@@ -10,7 +11,7 @@ class CategoryController {
     try {
       schema.validateSync(request.body, { abortEarly: false })
     } catch (err) {
-      return response.status(400).json({ error: err.errors })
+      return response.status(400).json({ error: err.error })
     }
 
     const { admin: isAdmin } = await User.findByPk(request.userId)
@@ -30,12 +31,12 @@ class CategoryController {
       return response.status(400).json({ error: "User already exists" })
     }
 
-    const { id } = await Category.create({
+    const category = await Category.create({
       name,
       path,
     })
 
-    return response.status(201).json({ id, name })
+    return response.status(201).json({ category })
   }
 
   async update(request, response) {
@@ -46,7 +47,7 @@ class CategoryController {
     try {
       schema.validateSync(request.body, { abortEarly: false })
     } catch (err) {
-      return response.status(400).json({ error: err.errors })
+      return response.status(400).json({ error: err.error })
     }
 
     const { admin: isAdmin } = await User.findByPk(request.userId)
