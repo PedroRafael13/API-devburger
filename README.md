@@ -39,6 +39,7 @@ A porta usada foi a 3001
 - [X] Yarn
 - [X] Eslint
 - [X] Prettier
+- [X] Strip
 
 ## 🔧 Funcionalidades 
 - Comunicação com o front end, enviando os dados armazenados
@@ -49,6 +50,7 @@ A porta usada foi a 3001
 - Rotas privadas
 - Rota de criação de usuário
 - Rota de Login
+- Rota para a opção de pagamento
 - Rota de criação da categoria
 - Rota de "get" da categoria
 - Rota de "update" de categoria
